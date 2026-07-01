@@ -1,26 +1,61 @@
 .App {
   font-family: sans-serif;
-  text-align: center;
+  /* text-align: center; */
+  /* color: crimson; */
 }
 
-.user-card {
-  border: 0.1rem solid black;
-  padding-block: 2rem;
-  margin-block-end: 1rem;
+.user-msg {
+  font-size: 1.5rem;
+
+  .user-name {
+    font-weight: 800;
+    font-style: italic;
+  }
 }
 
-.user-image {
-  height: 6rem;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  object-fit: cover;
+.user-container {
+  img {
+    height: 10rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 }
 
-.user-button {
-  color: white;
-  background-color: turquoise;
-  border: none;
-  padding-block: 1rem;
-  padding-inline: 0.5rem;
-  border-radius: 0.4rem;
+.movie-container {
+  /* background: orange; */
+  width: 20rem;
+
+  img {
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  .movie-name,
+  .movie-rating {
+    margin: 0.75rem 0rem;
+  }
+
+  .movie-rating {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .movie-summary {
+    margin: 0;
+    line-height: 1.3;
+  }
+}
+
+.movie-spec-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-list-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
