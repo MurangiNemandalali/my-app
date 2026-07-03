@@ -1,4 +1,7 @@
 // Prop name
+
+import { Counter } from "../Counter";
+
 // Presentation - Reusability ⬆️
 export function User({ name, pic }) {
   return (
@@ -7,6 +10,7 @@ export function User({ name, pic }) {
       <p className="user-msg">
         Hello, <span className="user-name">{name} 🎉</span>
       </p>
+      <Counter />
     </div>
   );
 }
