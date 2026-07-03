@@ -100,10 +100,10 @@ export function MovieList() {
   return (
     <main>
       <section>
-        <input type="text" placeholder="Name" />
-        <input type="text" placeholder="Poster" />
-        <input type="text" placeholder="Rating" />
-        <input type="text" placeholder="Summary" />
+        <input type="text" placeholder="Name" id="name" />
+        <input type="text" placeholder="Poster" id="Poster" />
+        <input type="text" placeholder="Rating" id="Rating" />
+        <input type="text" placeholder="Summary" id="Summary" />
         <button
           onClick={() => {
             makeMovie();

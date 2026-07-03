@@ -14,12 +14,15 @@ export default function App() {
   return (
     // JSX starts
     <div className="App">
-      <MovieList />
+      {/* <MovieList /> */}
       {/* <UserList /> */}
       {/* <Counter /> */}
 
       {/* <ConditionalStyling /> */}
       {/* <ColorGame /> */}
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </div>
     // JSX ends
   );
