@@ -1,7 +1,7 @@
 //Murangi
 import "./index.css";
 import { MovieList } from "./Movies/MovieList";
-import { Msg } from "./Msg";
+import { Msg } from "./concepts/Msg";
 import { UserList } from "./Users/UserList";
 import { ColorGame } from "./ColorGame/ColorGame";
 // import { WhyFragment } from "./WhyFragment";
@@ -14,15 +14,15 @@ export default function App() {
   return (
     // JSX starts
     <div className="App">
-      {/* <MovieList /> */}
+      <MovieList />
       {/* <UserList /> */}
       {/* <Counter /> */}
 
       {/* <ConditionalStyling /> */}
       {/* <ColorGame /> */}
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <App />
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
     // JSX ends
   );
