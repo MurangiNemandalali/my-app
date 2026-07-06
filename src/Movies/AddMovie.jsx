@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 
 // Task 1.1 - Separate the add movie logic to AddMovie component
 export function AddMovie({ moviesList, setMoviesList }) {
@@ -25,7 +26,7 @@ export function AddMovie({ moviesList, setMoviesList }) {
   };
 
   return (
-    <section>
+    <section className="add-movie">
       {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
       <TextField
         onChange={(event) => setName(event.target.value)}
@@ -59,7 +60,10 @@ export function AddMovie({ moviesList, setMoviesList }) {
         label="Summary"
         variant="outlined"
       />
-      <button onClick={addMovie}>Add Movie</button>
+
+      <Button variant="contained" onClick={addMovie}>
+        Add Movie
+      </Button>
     </section>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Movie } from "./Movie";
 import { INITIAL_MOVIES } from "./INITIAL_MOVIES";
+
 // import { AddMovie } from "./AddMovie";
 // import { MovieList } from "../App";
 

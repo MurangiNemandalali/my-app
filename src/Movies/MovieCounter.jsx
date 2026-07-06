@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 
 export function MovieCounter() {
   let [like, setLike] = useState(0);
@@ -11,14 +13,14 @@ export function MovieCounter() {
             setLike(like + 1);
           }}
         >
-          👍 {like}
+          <ThumbUpIcon /> {like}
         </button>
         <button
           onClick={() => {
             setDisLike(disLike + 1);
           }}
         >
-          👎 {disLike}
+          <ThumbDownIcon /> {disLike}
         </button>
       </div>
     </div>
