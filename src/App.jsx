@@ -7,6 +7,7 @@ import { ColorGame } from "./ColorGame/ColorGame";
 import { AddMovie } from "./Movies/AddMovie";
 import { useState } from "react";
 import { INITIAL_MOVIES } from "./Movies/INITIAL_MOVIES";
+import Button from "@mui/material/Button";
 
 import { Routes, Route, Navigate, replace } from "react-router";
 import { NavLink } from "react-router";
@@ -29,11 +30,9 @@ export default function App() {
       {/* <BrowserRouter>
         <App />
       </BrowserRouter> */}
-
       {/* a - will refresh */}
       {/* <a href="/about">About with a</a> | <a href="/contact">Contact with a</a>|{" "} */}
       {/* 3. Navigation */}
-
       <header>
         <nav className="navbar">
           <h2>Welcome to the App</h2>
@@ -56,7 +55,7 @@ export default function App() {
           </ul>
         </nav>
       </header>
-      {/* 2. Matching */}
+      {/* <Button variant="contained">Hello world</Button>;2. Matching */}
       <Routes>
         {/* Redirection - new path */}
 
@@ -64,11 +63,11 @@ export default function App() {
         <Route
           path="/movies/add-movie"
           element={
-            <AddMovie movieList={moviesList} setMoviesList={setMoviesList} />
+            <AddMovie moviesList={moviesList} setMoviesList={setMoviesList} />
           }
         />
         <Route path="/home" element={<Home />} />
-        <Route path="/movies" element={<MovieList movieList={moviesList} />} />
+        <Route path="/movies" element={<MovieList moviesList={moviesList} />} />
         <Route path="/users" element={<UserList />} />
         <Route path="/colour-game" element={<ColorGame />} />
 

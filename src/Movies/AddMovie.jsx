@@ -17,6 +17,7 @@ export function AddMovie({ moviesList, setMoviesList }) {
       summary,
     };
     /* Copy of movies + new movie */
+
     setMoviesList([newMovie, ...moviesList]);
   };
 
