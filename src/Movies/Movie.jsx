@@ -6,7 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 // import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
-// import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import * as React from "react";
 import Box from "@mui/material/Box";
@@ -54,7 +54,7 @@ export function Movie({ movie }) {
                 <span>{movie?.rating}</span>{" "}
               </p>
 
-              {/* <KeyboardArrowDownIcon /> */}
+              <KeyboardArrowDownIcon />
             </div>
             <button onClick={() => setBtnClick(!btnClick)}>
               💡 Toggle Summary
