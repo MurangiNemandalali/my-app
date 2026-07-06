@@ -20,16 +20,7 @@ export function Movie({ movie }) {
           ⭐<span>{movie?.rating}</span>{" "}
         </p>
       </div>
-      <button
-        onClick={() => {
-          btnClick == true
-            ? setBtnClick((btnClick = false))
-            : setBtnClick((btnClick = true));
-          // toggleSummary();
-        }}
-      >
-        💡 Toggle Summary
-      </button>
+      <button onClick={() => setBtnClick(!btnClick)}>💡 Toggle Summary</button>
       {btnClick ? <p className="movie-summary">{movie?.summary}</p> : null}
 
       <MovieCounter />

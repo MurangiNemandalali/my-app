@@ -1,6 +1,6 @@
 // Prop name
 
-import { Counter } from "../Counter";
+import { Counter } from "../concepts/03-Counter";
 
 // Presentation - Reusability ⬆️
 export function User({ name, pic }) {
