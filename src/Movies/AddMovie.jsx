@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+
 // Task 1.1 - Separate the add movie logic to AddMovie component
 export function AddMovie({ moviesList, setMoviesList }) {
   // Your Code
@@ -23,25 +26,38 @@ export function AddMovie({ moviesList, setMoviesList }) {
 
   return (
     <section>
-      <input
+      {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
+      <TextField
         onChange={(event) => setName(event.target.value)}
         value={name}
         placeholder="Name"
+        id="outlined-basic"
+        label="Name"
+        variant="outlined"
       />
-      <input
+      <TextField
         onChange={(event) => setPoster(event.target.value)}
         value={poster}
         placeholder="Poster"
+        id="outlined-basic"
+        label="Poster"
+        variant="outlined"
       />
-      <input
+      <TextField
         onChange={(event) => setRating(event.target.value)}
         value={rating}
         placeholder="Rating"
+        id="outlined-basic"
+        label="Rating"
+        variant="outlined"
       />
-      <input
+      <TextField
         onChange={(event) => setSummary(event.target.value)}
         value={summary}
         placeholder="Summary"
+        id="outlined-basic"
+        label="Summary"
+        variant="outlined"
       />
       <button onClick={addMovie}>Add Movie</button>
     </section>
