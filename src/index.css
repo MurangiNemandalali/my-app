@@ -84,3 +84,25 @@
   flex-direction: column;
   gap: 0.4rem;
 }
+
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.action-button {
+  background-color: white;
+  border: none;
+  margin-top: 1rem;
+}
+
+.action-button-1 {
+ color: crimson;
+}
+
+.action-button-2 {
+  color: green;
+}

@@ -7,8 +7,9 @@ export function MovieCounter() {
   let [disLike, setDisLike] = useState(0);
   return (
     <div>
-      <div className="action-buttons">
+      <div className="action-buttons ">
         <button
+          className="action-button action-button-1"
           onClick={() => {
             setLike(like + 1);
           }}
@@ -16,6 +17,7 @@ export function MovieCounter() {
           <ThumbUpIcon /> {like}
         </button>
         <button
+          className="action-button action-button-2"
           onClick={() => {
             setDisLike(disLike + 1);
           }}

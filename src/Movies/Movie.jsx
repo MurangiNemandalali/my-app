@@ -54,11 +54,11 @@ export function Movie({ movie }) {
                 <span>{movie?.rating}</span>{" "}
               </p>
 
-              <KeyboardArrowDownIcon />
+              <KeyboardArrowDownIcon onClick={() => setBtnClick(!btnClick)} />
             </div>
-            <button onClick={() => setBtnClick(!btnClick)}>
+            {/* <button onClick={() => setBtnClick(!btnClick)}>
               💡 Toggle Summary
-            </button>
+            </button> */}
             {btnClick ? (
               <Typography variant="body2" sx={{ color: "text.secondary" }}>
                 {movie?.summary}
@@ -68,27 +68,6 @@ export function Movie({ movie }) {
           </CardContent>
         </CardActionArea>
       </Card>
-
-      <div className="movie-container">
-        <img src={movie?.poster} alt={movie?.name} />
-        <div className="movie-spec-container">
-          <h2 className="movie-name">{movie?.name}</h2>
-          <p className="movie-rating" style={styles}>
-            ⭐<span>{movie?.rating}</span>{" "}
-          </p>
-        </div>
-        <button onClick={() => setBtnClick(!btnClick)}>
-          💡 Toggle Summary
-        </button>
-        {/* {btnClick ? <p className="movie-summary">{movie?.summary}</p> : null} */}
-        {btnClick ? (
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            {movie?.summary}
-          </Typography>
-        ) : null}
-
-        <MovieCounter />
-      </div>
     </>
   );
 }
