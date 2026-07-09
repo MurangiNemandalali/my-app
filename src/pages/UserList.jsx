@@ -1,4 +1,4 @@
-import { User } from "./User";
+import { User } from "../Users/User";
 
 // Readable & Maintainable & Testability
 // Smart & Presentation Component

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ColorBox } from "./ColorBox";
+import { ColorBox } from "../ColorGame/ColorBox";
 
 // Task - Clue: Hook & Conditional Styling
 export function ColorGame() {

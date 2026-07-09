@@ -12,9 +12,10 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
+import { useNavigate } from "react-router";
 
 // Presentation Component
-export function Movie({ movie }) {
+export function Movie({ movie, index, deleteBtn }) {
   // Scaffolding
 
   const styles = {
@@ -22,6 +23,7 @@ export function Movie({ movie }) {
   };
 
   let [btnClick, setBtnClick] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -56,6 +58,9 @@ export function Movie({ movie }) {
 
               <KeyboardArrowDownIcon onClick={() => setBtnClick(!btnClick)} />
             </div>
+            <button onClick={() => navigate(`/movies/${index}`)}>
+              ℹ️ Info
+            </button>
             {/* <button onClick={() => setBtnClick(!btnClick)}>
               💡 Toggle Summary
             </button> */}
@@ -65,12 +70,16 @@ export function Movie({ movie }) {
               </Typography>
             ) : null}
             <MovieCounter />
+
+            {deleteBtn}
           </CardContent>
         </CardActionArea>
       </Card>
     </>
   );
 }
+
+// Task 1.1 - Info -> /movies/0 or /movies/1 ... depending movie clicked
 
 // Task 2.2  - Toggle Summary
 // Clue: hook
