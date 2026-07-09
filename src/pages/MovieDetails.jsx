@@ -8,20 +8,39 @@ export function MovieDetails() {
   // Call the API for it
   const { id } = useParams();
   //const movie = movieList[id];
-  let [movie, setMovie] = useState(movieList[id]);
+  let [movie, setMovie] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(error);
 
-  useEffect(
+  const getMovies = (id) => {
+    setLoading(true);
     fetch(`https://6a4ceefee1cf82a4a17dd0df.mockapi.io/movies/${id}`, {
       method: "GET",
-    }).then((res) => res.json()),
-    [setMovie],
-  );
+    })
+      .then((res) => (res.ok ? res.json() : Promise.reject("Movie not found")))
+      .then((data) => setMovie(data))
+      .catch((err) => setError(err))
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    console.log("Mounting is Done");
+    getMovies(id);
+  }, [id]);
 
   const styles = {
     color: movie?.rating >= 8 ? "teal" : "crimson",
   };
 
   const navigate = useNavigate();
+
+  if (loading) {
+    return <h1>Loading</h1>;
+  }
+
+  if (error) {
+    return <h1>{error}</h1>;
+  }
   return (
     <div className="movie-detail-container">
       <iframe

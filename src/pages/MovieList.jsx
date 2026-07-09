@@ -75,7 +75,7 @@ export function MovieList() {
           <Movie
             movie={movie}
             key={index}
-            id={index}
+            id={movie.id}
             deleteBtn={
               <button onClick={() => deleteMovie(movie.id)}>Delete 🗑️</button>
             }

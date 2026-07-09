@@ -58,7 +58,7 @@ export function Movie({ movie, index, deleteBtn }) {
 
               <KeyboardArrowDownIcon onClick={() => setBtnClick(!btnClick)} />
             </div>
-            <button onClick={() => navigate(`/movies/${index}`)}>
+            <button onClick={() => navigate(`/movies/${movie.id}`)}>
               ℹ️ Info
             </button>
             {/* <button onClick={() => setBtnClick(!btnClick)}>
