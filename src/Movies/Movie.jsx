@@ -7,6 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 // import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 import * as React from "react";
 import Box from "@mui/material/Box";
@@ -56,7 +57,14 @@ export function Movie({ movie, index, deleteBtn }) {
                 <span>{movie?.rating}</span>{" "}
               </p>
 
-              <KeyboardArrowDownIcon onClick={() => setBtnClick(!btnClick)} />
+              {/* <KeyboardArrowDownIcon onClick={() => setBtnClick(!btnClick)} />
+              <KeyboardArrowUpIcon onClick={() => setBtnClick(!btnClick)} /> */}
+
+              {btnClick ? (
+                <KeyboardArrowDownIcon onClick={() => setBtnClick(!btnClick)} />
+              ) : (
+                <KeyboardArrowUpIcon onClick={() => setBtnClick(!btnClick)} />
+              )}
             </div>
             <button onClick={() => navigate(`/movies/${movie.id}`)}>
               ℹ️ Info
