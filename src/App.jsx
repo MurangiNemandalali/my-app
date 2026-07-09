@@ -70,12 +70,7 @@ export default function App() {
         {/* Redirection - new path */}
 
         <Route path="/films" element={<Navigate replace to="/movies" />} />
-        <Route
-          path="/movies/add-movie"
-          element={
-            <AddMovie moviesList={moviesList} setMoviesList={setMoviesList} />
-          }
-        />
+        <Route path="/movies/add-movie" element={<AddMovie />} />
         <Route path="/movies/:id" element={<MovieDetails />} />
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<MovieList moviesList={moviesList} />} />
