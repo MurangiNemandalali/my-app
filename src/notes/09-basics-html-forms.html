@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <label for="username">Username:</label>
+    <input id="username" type="text" placeholder="John" value="cool" /> -->
+
+    <!-- 90% forms elements differ `type` input -->
+
+    <!-- Validation works if wrapped with `form` -->
+    <form class="form-container">
+      <label
+        >Username:
+        <input type="text" placeholder="John" minlength="8" maxlength="12" />
+      </label>
+      <label
+        >Password:
+        <input type="password" placeholder="password" required />
+      </label>
+      <label
+        >Age:
+        <input type="number" placeholder="20" min="18" max="60" />
+      </label>
+      <label>
+        Email:
+        <input type="email" />
+      </label>
+
+      <h3>Hobbies</h3>
+
+      <label>
+        <input type="checkbox" name="hobbies" value="cricket" checked /> Cricket
+      </label>
+      <label>
+        <input type="checkbox" name="hobbies" value="football" disabled />
+        Football
+      </label>
+      <label>
+        <input type="checkbox" name="hobbies" value="chess" checked /> Chess
+      </label>
+
+      <label>
+        <input type="checkbox" name="hobbies" value="hr" disabled /> Horse
+        Riding
+      </label>
+      <button>Submit</button>
+    </form>
+
+    <!-- <div class="form-container">
+      <label
+        >Username:
+        <input type="text" placeholder="John" />
+      </label>
+      <label
+        >Password:
+        <input type="password" placeholder="password" />
+      </label>
+      <label
+        >Age:
+        <input type="number" placeholder="20" />
+      </label>
+
+      <label>
+        Date of Birth:
+        <input type="date" />
+      </label>
+
+      <h3>Meal of the day</h3>
+
+      <label>
+        <input type="radio" name="meal" value="breakfast" />
+        Breakfast
+      </label>
+
+      <label>
+        <input type="radio" name="meal" value="lunch" />
+        Lunch
+      </label>
+
+      <label>
+        <input type="radio" name="meal" value="dinner" />
+        Super Dinner
+      </label>
+
+      <h3>Hobbies</h3>
+
+      <label>
+        <input type="checkbox" name="hobbies" value="cricket" /> Cricket
+      </label>
+      <label>
+        <input type="checkbox" name="hobbies" value="football" /> Football
+      </label>
+      <label>
+        <input type="checkbox" name="hobbies" value="chess" /> Chess
+      </label>
+      <label>
+        <input type="checkbox" name="hobbies" value="hr" /> Horse Riding
+      </label>
+
+      <label>
+        <input type="color" />
+        Pick a color
+      </label>
+
+      <label>
+        <input type="range" />
+        Temperature
+      </label>
+
+      <h3>City</h3>
+
+      <select>
+        <option value="" disabled>-- Please Select City --</option>
+        <option value="jhb">Johannesburg</option>
+        <option value="cpt">Cape Town</option>
+        <option value="bfn">Bloemfontein</option>
+        <option value="wel">Welkom</option>
+      </select>
+
+      <select>
+        <option value="" disabled>-- Please Select City --</option>
+        <optgroup label="Gauteng">
+          <option value="jhb">Johannesburg</option>
+          <option value="pta">Pretoria</option>
+          <option value="cen">Centurion</option>
+          <option value="mid">Midrand</option>
+          <option value="ben">Benoni</option>
+        </optgroup>
+
+        <optgroup label="Western Cape">
+          <option value="cpt">Cape Town</option>
+          <option value="stel">Stellenbosch</option>
+          <option value="paar">Paarl</option>
+          <option value="geo">George</option>
+        </optgroup>
+      </select>
+
+      <textarea
+        rows="10"
+        cols="30"
+        placeholder="What's on your mind?"
+      ></textarea>
+    </div> -->
+  </body>
+</html>
