@@ -21,6 +21,7 @@ import {
 import { NavLink } from "react-router";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
+import { BasicForm } from "./pages/BasicForm";
 // import { WhyFragment } from "./WhyFragment";
 // import { ConditionalRendering } from "./ConditionalRendering";
 // Default export (only one per file)
@@ -79,6 +80,7 @@ export default function App() {
 
         {/* Special - if none matches |* matches */}
         <Route path="/*" element={<NotFound />} />
+        <Route path="/login" element={<BasicForm />} />
       </Routes>
     </div>
     // JSX ends
