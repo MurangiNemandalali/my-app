@@ -4,6 +4,7 @@ import { INITIAL_MOVIES } from "../Movies/INITIAL_MOVIES";
 import IconButton from "@mui/material/IconButton";
 import EditIcon from "@mui/icons-material/Edit";
 import { useNavigate } from "react-router";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 // import { AddMovie } from "./AddMovie";
 // import { MovieList } from "../App";
@@ -90,7 +91,14 @@ export function MovieList() {
               </IconButton>
             }
             deleteBtn={
-              <button onClick={() => deleteMovie(movie.id)}>Delete 🗑️</button>
+              // <button onClick={() => deleteMovie(movie.id)}>Delete 🗑️</button>
+              <IconButton
+                aria-label="edit"
+                onClick={() => deleteMovie(movie.id)}
+              >
+                {" "}
+                <DeleteIcon />
+              </IconButton>
             }
           />
         ))}

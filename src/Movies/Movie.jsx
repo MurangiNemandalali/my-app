@@ -17,6 +17,8 @@ import IconButton from "@mui/material/IconButton";
 import EditIcon from "@mui/icons-material/Edit";
 import { useNavigate } from "react-router";
 
+import InfoIcon from "@mui/icons-material/Info";
+
 // Presentation Component
 export function Movie({ movie, index, deleteBtn, editBtn }) {
   // Scaffolding
@@ -68,9 +70,17 @@ export function Movie({ movie, index, deleteBtn, editBtn }) {
                 <KeyboardArrowUpIcon onClick={() => setBtnClick(!btnClick)} />
               )}
             </div>
-            <button onClick={() => navigate(`/movies/${movie.id}`)}>
+            {/* <button onClick={() => navigate(`/movies/${movie.id}`)}>
               ℹ️ Info
-            </button>
+            </button> */}
+
+            <IconButton
+              aria-label="edit"
+              onClick={() => navigate(`/movies/${movie.id}`)}
+            >
+              {" "}
+              <InfoIcon />
+            </IconButton>
             {/* <button onClick={() => setBtnClick(!btnClick)}>
               💡 Toggle Summary
             </button> */}
