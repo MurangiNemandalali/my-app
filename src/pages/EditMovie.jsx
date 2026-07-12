@@ -2,14 +2,21 @@ import TextField from "@mui/material/TextField";
 import { useParams } from "react-router";
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 export function EditMovie() {
   const { id } = useParams();
+
   let [movieName, setMovieName] = useState("");
   let [moviePoster, setMoviePoster] = useState("");
   let [movieRating, setMovieRating] = useState("");
   let [movieSummary, setMovieSummary] = useState("");
   let [movieTrailer, setMovieTrailer] = useState("");
+
+  const [loading, setLoading] = useState(false);
+  const [error, errorState] = useState(false);
+
+  const navigate = useNavigate();
 
   const getMovie = () => {
     console.log("Geting data from Api");
@@ -31,6 +38,32 @@ export function EditMovie() {
 
   const updateMovie = () => {
     console.log("Updating movie");
+
+    const updatedMovie = {
+      name: movieName,
+      poster: moviePoster,
+      summary: movieSummary,
+      rating: movieRating,
+      trailer: movieTrailer,
+    };
+
+    setLoading(true);
+
+    fetch(`https://6a4ceefee1cf82a4a17dd0df.mockapi.io/movies/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(updatedMovie),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) =>
+        res.ok ? navigate("/movies") : Promise.reject("Retry adding movie"),
+      )
+      .catch((errorMsg) => {
+        console.log(errorMsg);
+        errorState(true);
+      })
+      .finally(setLoading(false));
   };
 
   useEffect(() => {
@@ -41,6 +74,8 @@ export function EditMovie() {
   return (
     <section className="edit-movie">
       <h1>Hello Murangi</h1>
+      {loading && <h1>Loading...</h1>}
+      {error ? <h1>Retry adding movie</h1> : null}
       <TextField
         id="outlined-basic"
         label="Name"
@@ -81,7 +116,9 @@ export function EditMovie() {
         value={movieTrailer}
         placeholder={movieTrailer}
       />
-      <Button variant="contained">Edit Movie</Button>
+      <Button variant="contained" onClick={() => updateMovie()}>
+        Edit Movie
+      </Button>
     </section>
   );
 }
