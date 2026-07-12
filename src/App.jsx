@@ -5,6 +5,7 @@ import { Msg } from "./concepts/01-Msg";
 import { UserList } from "./pages/UserList";
 import { ColorGame } from "./pages/ColorGame";
 import { AddMovie } from "./pages/AddMovie";
+import { EditMovie } from "./pages/EditMovie";
 import { useState } from "react";
 import { INITIAL_MOVIES } from "./Movies/INITIAL_MOVIES";
 import Button from "@mui/material/Button";
@@ -77,6 +78,7 @@ export default function App() {
         <Route path="/movies" element={<MovieList moviesList={moviesList} />} />
         <Route path="/users" element={<UserList />} />
         <Route path="/colour-game" element={<ColorGame />} />
+        <Route path="/movies/:id/edit" element={<EditMovie />} />
 
         {/* Special - if none matches |* matches */}
         <Route path="/*" element={<NotFound />} />

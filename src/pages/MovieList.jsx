@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Movie } from "../Movies/Movie";
 import { INITIAL_MOVIES } from "../Movies/INITIAL_MOVIES";
+import IconButton from "@mui/material/IconButton";
+import EditIcon from "@mui/icons-material/Edit";
+import { useNavigate } from "react-router";
 
 // import { AddMovie } from "./AddMovie";
 // import { MovieList } from "../App";
@@ -44,6 +47,7 @@ export function MovieList() {
   /* Your Code */
 
   const [movieList, setMovieList] = useState([]);
+  const navigate = useNavigate();
 
   const getMovies = () => {
     fetch("https://6a4ceefee1cf82a4a17dd0df.mockapi.io/movies", {
@@ -76,6 +80,15 @@ export function MovieList() {
             movie={movie}
             key={index}
             id={movie.id}
+            editBtn={
+              <IconButton
+                aria-label="edit"
+                onClick={() => navigate("/movies/:id/edit")}
+              >
+                {" "}
+                <EditIcon />
+              </IconButton>
+            }
             deleteBtn={
               <button onClick={() => deleteMovie(movie.id)}>Delete 🗑️</button>
             }

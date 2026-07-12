@@ -13,10 +13,12 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import EditIcon from "@mui/icons-material/Edit";
 import { useNavigate } from "react-router";
 
 // Presentation Component
-export function Movie({ movie, index, deleteBtn }) {
+export function Movie({ movie, index, deleteBtn, editBtn }) {
   // Scaffolding
 
   const styles = {
@@ -80,6 +82,14 @@ export function Movie({ movie, index, deleteBtn }) {
             <MovieCounter />
 
             {deleteBtn}
+            {/* {editBtn} */}
+            <IconButton
+              aria-label="edit"
+              onClick={() => navigate(`/movies/${movie.id}/edit`)}
+            >
+              {" "}
+              <EditIcon />
+            </IconButton>
           </CardContent>
         </CardActionArea>
       </Card>

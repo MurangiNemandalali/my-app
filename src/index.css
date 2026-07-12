@@ -106,3 +106,10 @@
 .action-button-2 {
   color: green;
 }
+
+/* EditMovie */
+.edit-movie {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
