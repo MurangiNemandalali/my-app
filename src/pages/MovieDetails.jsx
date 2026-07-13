@@ -10,7 +10,7 @@ export function MovieDetails() {
   //const movie = movieList[id];
   let [movie, setMovie] = useState({});
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(error);
+  const [error, setError] = useState(false);
 
   const getMovies = (id) => {
     setLoading(true);
